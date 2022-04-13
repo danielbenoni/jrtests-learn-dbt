@@ -23,10 +23,7 @@ models:
 sources:
   - name: dvdrental
     database: |
-      {%- if target.name == "dev" -%} TRANSFORM_WH_Test
-      {%- elif target.name == "prod" -%} TRANSFORM_WH
-      {%- else -%} TRANSFORM_WH_Test
-      {%- endif -%}
+      {% if target.name == "dev" %}TRANSFORM_WH_Test{% elif target.name == "prod" %}TRANSFORM_WH{% else %}TRANSFORM_WH_Test{% endif %}
     schema: public
     tables:
       - name: address
