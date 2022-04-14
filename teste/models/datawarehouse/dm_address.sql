@@ -1,5 +1,5 @@
 {{ config(materialized='incremental', unique_key = 'address_id') }}
-
+//Comentario Teste
 SELECT 	a.address_id, 
 		a.address, 
 		a.address2, 
